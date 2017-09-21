@@ -1,0 +1,13 @@
+stages:
+  - build
+  - push
+
+build:
+  stage: build
+  script:
+    - docker build --rm -t gpii/infra-fake-component .
+
+push:
+  stage: push
+  script:
+    - docker push gpii/infra-fake-component
